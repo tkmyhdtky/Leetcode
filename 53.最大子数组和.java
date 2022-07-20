@@ -1,4 +1,9 @@
 /*
+ * @Date: 2022-07-18 20:27:55
+ * @LastEditTime: 2022-07-20 22:05:05
+ * @FilePath: \Leetcode\53.最大子数组和.java
+ */
+/*
  * @lc app=leetcode.cn id=53 lang=java
  *
  * [53] 最大子数组和
@@ -58,17 +63,37 @@
 
 // @lc code=start
 class Solution {
+    /**
+     * @description: 贪心算法
+     * @param {int[]} nums
+     * @return {*}
+     */
     public int maxSubArray(int[] nums) {
         int res = Integer.MIN_VALUE;
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
-            res=Math.max(sum, res);
+            res = Math.max(sum, res);
             if (sum < 0) {
                 sum = 0;
             }
         }
         return res;
     }
+    /**
+     * @description: 动态规划
+     * @param {int[]} nums
+     * @return {*}
+     */
+    // public int maxSubArray(int[] nums) {
+    // int dp[] = new int[nums.length];
+    // dp[0] = nums[0];
+    // int res = dp[0];
+    // for (int i = 1; i < dp.length; i++) {
+    // dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+    // res = res > dp[i] ? res : dp[i];
+    // }
+    // return res;
+    // }
 }
 // @lc code=end
