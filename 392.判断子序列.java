@@ -1,12 +1,7 @@
 /*
  * @Date: 2022-07-20 22:06:01
- * @LastEditTime: 2022-07-20 22:20:17
- * @FilePath: \Leetcode\392.判断子序列.java
- */
-/*
- * @lc app=leetcode.cn id=392 lang=java
- *
- * [392] 判断子序列
+ * @LastEditTime: 2022-07-29 10:40:05
+ * @FilePath: \LeetCode\392.判断子序列.java
  */
 
 // @lc code=start
@@ -22,6 +17,7 @@ class Solution {
                 }
             }
         }
+        
         if (dp[s.length()][t.length()]==s.length()) {
             return true;
         }else{
