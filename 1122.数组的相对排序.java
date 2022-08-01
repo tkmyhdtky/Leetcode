@@ -40,6 +40,5 @@ class Solution{
         }
         return arr1;
     }
-
 }
 // @lc code=end
