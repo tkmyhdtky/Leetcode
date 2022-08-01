@@ -1,12 +1,12 @@
 /*
  * @Date: 2022-07-29 15:08:05
- * @LastEditTime: 2022-07-31 21:01:42
- * @FilePath: \Leetcode\JavaDebug.java
+ * @LastEditTime: 2022-08-01 16:30:53
+ * @FilePath: \LeetCode\JavaDebug.java
  */
 public class JavaDebug {
     public static void main(String[] args) {
-        String s = "  hello world  ";
-        Solution58 test = new Solution58();
-        System.out.println(test.lengthOfLastWord(s));
+        String a = "g";
+        Solution520 test = new Solution520();
+        System.out.println(test.detectCapitalUse(a));
     }
 }
