@@ -1,12 +1,12 @@
 /*
  * @Date: 2022-07-29 15:08:05
- * @LastEditTime: 2022-08-02 20:27:55
+ * @LastEditTime: 2022-08-03 14:04:37
  * @FilePath: \LeetCode\JavaDebug.java
  */
 public class JavaDebug {
     public static void main(String[] args) {
-        int[] a = {4,3,2,7,8,2,3,1};
-        Solution448 test = new Solution448();
-        test.findDisappearedNumbers(a);
+        int[] a = { 1,3,-1,-3,5,3,6,7 };
+        Solution239 test = new Solution239();
+        test.maxSlidingWindow(a, 3);
     }
 }
