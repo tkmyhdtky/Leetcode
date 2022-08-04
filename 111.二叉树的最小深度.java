@@ -1,17 +1,17 @@
-import java.rmi.server.RemoteStub;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
-
-import javax.swing.tree.TreeNode;
+import java.util.List;
 
 /*
- * @Date: 2022-08-04 17:29:29
- * @LastEditTime: 2022-08-04 17:35:07
- * @FilePath: \LeetCode\104.二叉树的最大深度.java
+ * @Date: 2022-08-04 17:36:06
+ * @LastEditTime: 2022-08-04 17:44:00
+ * @FilePath: \LeetCode\111.二叉树的最小深度.java
  */
 /*
- * @lc app=leetcode.cn id=104 lang=java
+ * @lc app=leetcode.cn id=111 lang=java
  *
- * [104] 二叉树的最大深度
+ * [111] 二叉树的最小深度
  */
 
 // @lc code=start
@@ -31,21 +31,24 @@ import javax.swing.tree.TreeNode;
  * }
  */
 class Solution {
-    public int maxDepth(TreeNode root) {
-        int res=level(root);
+    public int minDepth(TreeNode root) {
+        int res = level(root);
         return res;
     }
 
     private int level(TreeNode root) {
         Deque<TreeNode> deque = new ArrayDeque<>();
-        int maxdepth=0;
         if (root != null)
             deque.offer(root);
+        int depth = 0;
         while (!deque.isEmpty()) {
             int len = deque.size();
-            maxdepth++;
+            depth++;
             while (len > 0) {
                 TreeNode cur = deque.poll();
+                if (cur.left == null && cur.right == null) {
+                    return depth;
+                }
                 if (cur.left != null)
                     deque.offer(cur.left);
                 if (cur.right != null)
@@ -53,7 +56,7 @@ class Solution {
                 len--;
             }
         }
-        return maxdepth;
+        return 0;
     }
 }
 // @lc code=end
