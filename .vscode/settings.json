@@ -1,7 +1,10 @@
 {
     "cSpell.words": [
         "curr",
+        "inorder",
         "leetcode",
-        "nums"
+        "nums",
+        "postorder",
+        "preorder"
     ]
 }
