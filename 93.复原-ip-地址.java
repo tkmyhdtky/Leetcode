@@ -2,8 +2,8 @@
 /*
  * @Author: WangZhao wz1847584786@163.com
  * @Date: 2022-06-26 15:28:04
- * @LastEditors: WangZhao wz1847584786@163.com
- * @LastEditTime: 2022-06-26 16:10:15
+ * @LastEditors: wangzhao wangzhao@swu.com
+ * @LastEditTime: 2022-09-19 14:21:38
  * @FilePath: \LeetCode\93.复原-ip-地址.java
  * @Description: 
  * 
@@ -103,9 +103,7 @@ class Solution {
         for (int i = startIndex; i < s.length(); i++) {
             if (isValid(s, startIndex, i)) {
                 s = s.substring(0, i + 1) + "." + s.substring(i + 1);
-                pointNum++;
-                backtracking(s, i + 2, pointNum);
-                pointNum--;
+                backtracking(s, i + 2, pointNum+1);
                 s = s.substring(0, i + 1) + s.substring(i + 2);
             } else {
                 break;
