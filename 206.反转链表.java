@@ -2,7 +2,7 @@ import java.util.List;
 
 /*
  * @Date: 2022-07-28 15:10:12
- * @LastEditTime: 2022-07-28 15:32:24
+ * @LastEditTime: 2022-09-29 00:50:30
  * @FilePath: \LeetCode\206.反转链表.java
  */
 /*
@@ -28,17 +28,18 @@ class Solution {
      * @return {*}
      */
     // public ListNode reverseList(ListNode head) {
-    // ListNode pre = null;
-    // ListNode cur = head;
-    // ListNode temp=new ListNode();
-    // while (cur != null) {
-    // temp = cur.next;
-    // cur.next=pre;
-    // pre = cur;
-    // cur=temp;
+    //     ListNode pre = null;
+    //     ListNode cur = head;
+    //     ListNode temp = new ListNode();
+    //     while (cur != null) {
+    //         temp = cur.next;
+    //         cur.next = pre;
+    //         pre = cur;
+    //         cur = temp;
+    //     }
+    //     return pre;
     // }
-    // return pre;
-    // }
+
     /**
      * @description: 递归法
      * @param {ListNode} head

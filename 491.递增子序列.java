@@ -2,8 +2,8 @@
 /*
  * @Author: WangZhao wz1847584786@163.com
  * @Date: 2022-06-28 08:48:13
- * @LastEditors: WangZhao wz1847584786@163.com
- * @LastEditTime: 2022-06-28 18:59:59
+ * @LastEditors: wangzhao wangzhao@swu.com
+ * @LastEditTime: 2022-09-22 09:05:33
  * @FilePath: \LeetCode\491.递增子序列.java
  * @Description: 
  * 
@@ -74,7 +74,7 @@ class Solution {
         if (list.size() > 1) {
             res.add(new ArrayList<>(list));
         }
-        // int[] used = new int[201];
+        // 使用set来对本层元素进行去重,使用过的元素不再使用
         for (int i = startIndex; i < nums.length; i++) {
             if (!list.isEmpty() && nums[i] < list.get(list.size() - 1) ||
                     (used.contains(nums[i])))

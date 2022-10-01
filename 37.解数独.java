@@ -1,8 +1,8 @@
 /*
  * @Author: WangZhao wz1847584786@163.com
  * @Date: 2022-06-29 13:30:20
- * @LastEditors: WangZhao wz1847584786@163.com
- * @LastEditTime: 2022-07-09 10:06:31
+ * @LastEditors: wangzhao wangzhao@swu.com
+ * @LastEditTime: 2022-09-23 10:37:39
  * @FilePath: \LeetCode\37.解数独.java
  * @Description: 
  * 
@@ -109,7 +109,7 @@ class Solution {
             }
         }
         // 9宫格里是否重复
-        int startRow = (row / 3) * 3;
+        int startRow = (row / 3) * 3;//处理坐标从左上角出发
         int startCol = (col / 3) * 3;
         for (int i = startRow; i < startRow + 3; i++) {
             for (int j = startCol; j < startCol + 3; j++) {

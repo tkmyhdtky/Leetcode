@@ -6,8 +6,8 @@ import java.util.List;
 /*
  * @Author: WangZhao wz1847584786@163.com
  * @Date: 2022-06-26 16:29:30
- * @LastEditors: WangZhao wz1847584786@163.com
- * @LastEditTime: 2022-06-26 16:37:40
+ * @LastEditors: wangzhao wangzhao@swu.com
+ * @LastEditTime: 2022-09-22 08:46:57
  * @FilePath: \LeetCode\90.子集-ii.java
  * @Description: 
  * 
@@ -69,19 +69,26 @@ class Solution {
     LinkedList<Integer> list = new LinkedList<>();
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
+        if (nums.length == 0) {
+            result.add(list);
+            return result;
+        }
         Arrays.sort(nums);
-        backtracking(nums,   0);
+        boolean[] used = new boolean[nums.length];
+        backtracking(nums, 0, used);
         return result;
     }
 
-    private void backtracking(int[] nums,  int startIdex) {
+    private void backtracking(int[] nums, int startIdex, boolean[] used) {
         result.add(new ArrayList<>(list));
         for (int i = startIdex; i < nums.length; i++) {
-            if (i > startIdex && nums[i] == nums[i - 1] ) {
+            if (i > startIdex && nums[i] == nums[i - 1] && !used[i - 1]) {
                 continue;
             }
             list.add(nums[i]);
-            backtracking(nums,   i + 1);
+            used[i] = true;
+            backtracking(nums, i + 1, used);
+            used[i] = false;
             list.removeLast();
         }
     }
