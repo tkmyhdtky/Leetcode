@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-12-26 19:26:55
  * @LastEditors: wangzhao wangzhao@swu.com
- * @LastEditTime: 2022-12-26 19:38:02
+ * @LastEditTime: 2022-12-26 22:26:12
  * @Description: Default
  */
 /*
@@ -18,12 +18,12 @@ class Solution {
             return letters[0];
         }
         int low = 0, high = length - 1;
-        while (low < high) {
+        while (low <= high) {
             int mid = (high - low) / 2 + low;
-            if (letters[mid]>target) {
-                high=mid;
-            }else{
-                low=mid+1;
+            if (letters[mid] > target) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
             }
         }
         return letters[low];
