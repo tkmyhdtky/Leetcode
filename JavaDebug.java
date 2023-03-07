@@ -1,11 +1,16 @@
+import java.util.List;
+
+import java.util.List;
+
 /*
  * @Date: 2022-07-29 15:08:05
- * @LastEditTime: 2022-08-05 09:26:50
+ * @LastEditTime: 2023-02-24 18:42:43
  * @FilePath: \LeetCode\JavaDebug.java
  */
 public class JavaDebug {
     public static void main(String[] args) {
-        Solution5 s = new Solution5();
-        System.out.println(s.longestPalindrome("babad"));
+      Solution131 s= new Solution131();
+      s.partition("aab");
     }
+
 }

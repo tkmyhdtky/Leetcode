@@ -16,18 +16,53 @@ import java.util.List;
  */
 
 // @lc code=start
+// class Solution {
+//     List<List<String>> result = new ArrayList<>();
+//     LinkedList<String> path = new LinkedList<>();
+
+//     public List<List<String>> partition(String s) {
+//         backtracking(s, 0);
+//         return result;
+//     }
+
+//     private void backtracking(String s, int startIndex) {
+//         if (startIndex >= s.length()) {
+//             result.add(new ArrayList<>(path));
+//             return;
+//         }
+//         for (int i = startIndex; i < s.length(); i++) {
+//             if (isPalindrome(s, startIndex, i)) {
+//                 path.add(s.substring(startIndex, i + 1));
+//             } else {
+//                 continue;
+//             }
+//             backtracking(s, i + 1);
+//             path.removeLast();
+//         }
+//     }
+
+//     private boolean isPalindrome(String s, int startIndex, int endIndex) {
+//         for (int i = startIndex, j = endIndex; i < j; i++, j--) {
+//             if (s.charAt(i) != s.charAt(j)) {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// }
+
 class Solution {
-    List<List<String>> result = new ArrayList<>();
+    List<List<String>> res = new ArrayList<>();
     LinkedList<String> path = new LinkedList<>();
 
     public List<List<String>> partition(String s) {
         backtracking(s, 0);
-        return result;
+        return res;
     }
 
-    private void backtracking(String s, int startIndex) {
+    void backtracking(String s, int startIndex) {
         if (startIndex >= s.length()) {
-            result.add(new ArrayList<>(path));
+            res.add(new ArrayList<>(path));
             return;
         }
         for (int i = startIndex; i < s.length(); i++) {
@@ -41,9 +76,9 @@ class Solution {
         }
     }
 
-    private boolean isPalindrome(String s, int startIndex, int endIndex) {
-        for (int i = startIndex, j = endIndex; i < j; i++, j--) {
-            if (s.charAt(i) != s.charAt(j)) {
+    public boolean isPalindrome(String s, int startIndex, int endIndex) {
+        while (startIndex < endIndex) {
+            if (s.charAt(startIndex++) != s.charAt(endIndex--)) {
                 return false;
             }
         }
