@@ -9,8 +9,6 @@ import java.util.List;
  */
 public class JavaDebug {
     public static void main(String[] args) {
-      Solution131 s= new Solution131();
-      s.partition("aab");
     }
 
 }
