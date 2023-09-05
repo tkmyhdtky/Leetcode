@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-class Solution263 {
+class Solution {
     public boolean isUgly(int n) {
         if (n < 1) {
             return false;
